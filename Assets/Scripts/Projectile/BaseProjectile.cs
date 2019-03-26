@@ -5,7 +5,14 @@ using UnityEngine;
 public class BaseProjectile : MonoBehaviour, IDestructable
 {
 
-    public int Damage;
-    public float Speed;
+    #region variables
+    public float ShotRange;
+    #endregion
+    public void shoot()
+    {
+
+    }
+
+
 
 }

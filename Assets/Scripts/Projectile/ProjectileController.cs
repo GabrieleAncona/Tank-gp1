@@ -7,29 +7,44 @@ public class ProjectileController : MonoBehaviour
     #region variables
 
     public int damage = 2;
-    public TankData tank;
+    
 
     #endregion
+  
+    #region API
+    public ProjectileData PJData;
 
-    private void Start()
+
+    public void Range()
     {
-        tank = FindObjectOfType<TankData>();
+        PJData.range += Time.deltaTime;
+
+        if (PJData.range > PJData.maxRange)
+        {
+            PJData.range = PJData.maxRange;
+        }
+
     }
 
-    #region API
+   
 
-    //controllo collisioni
-
+    /// <summary>
+    ///controllo collisioni 
+    /// </summary>
+    /// <param name="other"></param>
     private void OnCollisionEnter(Collision other)
     {
+        
+
         //se il proiettile colpisce un tank
         if (other.gameObject.GetComponent<TankData>())
         {
+            
             //fai danno
-            tank.Life = (tank.Life - damage); 
+            other.gameObject.GetComponent<TankData>().Life = (other.gameObject.GetComponent<TankData>().Life - damage); 
 
             //se la vita va a zero distruggi il tank
-            if(tank.Life <= 0 && other.gameObject.GetComponent(typeof(IDestructable)))
+            if(other.gameObject.GetComponent<TankData>().Life <= 0 && other.gameObject.GetComponent(typeof(IDestructable)))
             {
                 other.gameObject.SetActive(false);
             }

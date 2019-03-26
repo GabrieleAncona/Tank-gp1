@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 3
   Speed: 2
-  projectileview: {fileID: 0}
+  projectileview: {fileID: 192454, guid: 2280209b0f63f43dba30902b6ca304fe, type: 3}
+  range: 0
+  maxRange: 1
+  shoottype: 0

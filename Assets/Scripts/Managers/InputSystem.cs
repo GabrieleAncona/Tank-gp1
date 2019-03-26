@@ -5,13 +5,19 @@ using UnityEngine;
 public class InputSystem : MonoBehaviour
 {
     TankView tankView;
-    
+    ProjectileController PJcont;
+   
     // Use this for initialization
     void Start()
     {
         if (tankView == null)
         {
             tankView = GetComponent<TankView>(); 
+        }
+
+        if(PJcont == null)
+        {
+            PJcont = GetComponent<ProjectileController>();
         }
     }
 
@@ -69,6 +75,15 @@ public class InputSystem : MonoBehaviour
         else if (Input.GetAxis("rotation") < 0)
         {
             Rotation(global::Rotation.Left);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PJcont.Range();
+        }
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            
         }
     }
 }

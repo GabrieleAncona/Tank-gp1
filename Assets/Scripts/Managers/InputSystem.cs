@@ -79,7 +79,7 @@ public class InputSystem : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            PJcont.Range();
+            //PJcont.Range();
         }
         else if (Input.GetKeyUp(KeyCode.Space))
         {

@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class ProjectileView : MonoBehaviour
 {
-    public ProjectileData CurrentPJData;
+    public BulletData CurrentPJData;
 
     private void Awake()
     {
         
     }
 
-    public void Init(ProjectileData PJdata)
+    public void Init(BulletData PJdata)
     {
         if(CurrentPJData != null)
         {

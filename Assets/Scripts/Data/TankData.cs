@@ -10,13 +10,13 @@ public class TankData : ScriptableObject
     public GameObject currentview;
     public float MovementSpeed;
     public float RotationSpeed;
-
-    public float WaitingTime;
+    public BulletType BulletType;
+   
 
 
 }
 
-public enum TankType
+public enum BulletType
 {
     Missile,
     Other

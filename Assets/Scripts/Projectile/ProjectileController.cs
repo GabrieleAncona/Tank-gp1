@@ -12,19 +12,19 @@ public class ProjectileController : MonoBehaviour
     #endregion
   
     #region API
-    public ProjectileData PJData;
+    public BulletData PJData;
 
 
-    public void Range()
-    {
-        PJData.range += Time.deltaTime;
+    //public void Range()
+    //{
+    //    PJData.range += Time.deltaTime;
 
-        if (PJData.range > PJData.maxRange)
-        {
-            PJData.range = PJData.maxRange;
-        }
+    //    if (PJData.range > PJData.maxRange)
+    //    {
+    //        PJData.range = PJData.maxRange;
+    //    }
 
-    }
+    //}
 
    
 
@@ -44,7 +44,7 @@ public class ProjectileController : MonoBehaviour
             other.gameObject.GetComponent<TankData>().Life = (other.gameObject.GetComponent<TankData>().Life - damage); 
 
             //se la vita va a zero distruggi il tank
-            if(other.gameObject.GetComponent<TankData>().Life <= 0 && other.gameObject.GetComponent(typeof(IDestructable)))
+            if(other.gameObject.GetComponent<TankData>().Life <= 0 && other.gameObject.GetComponent(typeof(IDamagable)))
             {
                 other.gameObject.SetActive(false);
             }

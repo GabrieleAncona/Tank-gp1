@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IObstacle
 {
-
+     void Init(ObstacleData _obstacleData);
 }

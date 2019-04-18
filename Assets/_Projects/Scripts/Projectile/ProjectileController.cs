@@ -44,14 +44,14 @@ public class ProjectileController : MonoBehaviour
             other.gameObject.GetComponent<TankData>().Life = (other.gameObject.GetComponent<TankData>().Life - damage); 
 
             //se la vita va a zero distruggi il tank
-            if(other.gameObject.GetComponent<TankData>().Life <= 0 && other.gameObject.GetComponent(typeof(IDamagable)))
+            if(other.gameObject.GetComponent<TankData>().Life <= 0 && other.gameObject.GetComponent(typeof(IDamageable)))
             {
                 other.gameObject.SetActive(false);
             }
         }
 
         //se colpisce un idamageble succederà qualcosa
-        if (other.gameObject.GetComponent(typeof(IDamagable)))
+        if (other.gameObject.GetComponent(typeof(IDamageable)))
         {
 
         }

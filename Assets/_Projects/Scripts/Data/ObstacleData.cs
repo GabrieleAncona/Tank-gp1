@@ -6,5 +6,5 @@ using UnityEngine;
 public class ObstacleData : ScriptableObject
 {
     public int Life;
-    public GameObject ObstacleView;
+    public GameObject Graphic;
 }

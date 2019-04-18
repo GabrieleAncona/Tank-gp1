@@ -6,14 +6,14 @@ public class ObstacleGraphicController : MonoBehaviour
 {
     private GameObject graphic;
 
-    private void Init(GameObject _graphic)
+    public void Init(GameObject _graphic)
     {
-        
+        graphic = _graphic;
     }
 
     private void OnEnable()
     {
-        
+       // Solo per eventi?
     }
 
     private void OnDisable()
